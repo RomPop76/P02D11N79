@@ -22,6 +22,7 @@
    position: fixed;
    top: calc(50% - 50px);
    left: calc(50% - 50px);
+   transform: rotate(0deg);
   }
  </style>
 </head>
@@ -33,11 +34,20 @@
  <script>
   // parametry główne. Za pomocą zmiennych stwórz początkową wartość rotate (zero) i wartość o którą będziesz zmieniał stopnie (o 10 stopnii).
 
-
+    let startRotate = 0;
+    let degRotate = 10;
+    let rota = startRotate + degRotate + "deg"
   // pobieramy elementy - pobierz przycisk i div
 
+  const btnRotate = document.querySelector('button');
+  const square = document.querySelector('.square');
 
   // podpinamy nasłuchiwanie i umeiszczamy w nim funkcje anonimową. Pamiętaj zmieniamy własciwość transform. Za każdym razie obrót zwiększa się od 10 deg. 
+
+  btnRotate.addEventListener("click", function (){
+    console.log(rota);
+    square.style.transform = rotate(rota)
+  })
 
 
   //Bonus dodaj właściwość transition dla div określoną na .5s.
